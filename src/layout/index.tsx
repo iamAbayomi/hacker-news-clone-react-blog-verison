@@ -38,9 +38,9 @@ const AppLayout = ({
                   className="header-text-content"
                   onClick={() => goToPage("/")}
                 >
-                  <Text>Hackers News</Text>
+                  <Text className="header-text">Hackers News</Text>
                 </Box>
-                <Box className="header-menu">
+                <Box display={"flex"} className="header-menu">
                   {menuHeader.map((item: string, index: number) => (
                     <Box key={index} display={"flex"} alignItems={"center"}>
                       <Text
@@ -49,7 +49,7 @@ const AppLayout = ({
                       >
                         {item}
                       </Text>
-                      <Text ml={"10px"}>|</Text>
+                      <Text m={"0px 0px 2px 0px"}>|</Text>
                     </Box>
                   ))}
                 </Box>
