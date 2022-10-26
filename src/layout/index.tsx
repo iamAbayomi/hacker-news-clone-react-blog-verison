@@ -1,4 +1,6 @@
+import Footer from "@/components/footer";
 import Headline from "@/components/Headline";
+import { footerData } from "@/utils/dummydate";
 import { Box, Image, Text } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { ReactElement } from "react";
@@ -90,6 +92,7 @@ const AppLayout = ({
               More
             </Text>
           )}
+          <Footer footerLink={footerData} />
         </Box>
       </Box>
     </Box>
