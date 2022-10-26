@@ -1,3 +1,4 @@
+import Headline from "@/components/Headline";
 import { Box, Image, Text } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { ReactElement } from "react";
@@ -55,6 +56,20 @@ const AppLayout = ({
                 </Box>
               </Box>
             </Box>
+          </Box>
+          {/* This section contains the contianer for the lists of headline */}
+          <Box className="list-of-headline">
+            {isLoading ? (
+              <Text margin={"15px 0px 0px 0px"} textAlign={"center"}>
+                isLoading...
+              </Text>
+            ) : (
+              <Box>
+                {newsItems?.map((item: INewsItem, index: number) => (
+                  <Headline key={index} newsId={++index} headline={item} />
+                ))}
+              </Box>
+            )}
           </Box>
         </Box>
       </Box>
