@@ -25,6 +25,10 @@ const AppLayout = ({
     router.push(`${page}`);
   }
 
+  function increaseStep() {
+    fetchNextPage();
+  }
+
   return (
     <Box>
       <Box className="App">
@@ -71,6 +75,21 @@ const AppLayout = ({
               </Box>
             )}
           </Box>
+          {isFetchingNextPage ? (
+            <Text margin={"15px 0px 15px 0px"} textAlign={"center"}>
+              isLoading...
+            </Text>
+          ) : (
+            <Text
+              m={"10px 0px 10px 40px"}
+              onClick={increaseStep}
+              cursor={"pointer"}
+              fontSize={"14px"}
+              color={"#828282"}
+            >
+              More
+            </Text>
+          )}
         </Box>
       </Box>
     </Box>
