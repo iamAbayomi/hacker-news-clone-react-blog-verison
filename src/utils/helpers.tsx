@@ -7,7 +7,7 @@ export const _errorHandler = (err: unknown) => {
   let message = !navigator.onLine
     ? "Please check your internet connection"
     : error?.response.status == 400
-    ? "Something went wrond"
+    ? "Something went wrong"
     : "";
   return toast.error(message);
 };
