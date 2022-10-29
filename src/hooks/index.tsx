@@ -1,11 +1,14 @@
 import api from "@/utils/api";
 import { _errorHandler } from "@/utils/helpers";
-import { useInfiniteQuery } from "@tanstack/react-query";
+import { useInfiniteQuery, QueryKey } from "@tanstack/react-query";
 
 const onError = (err: any) => {
   _errorHandler(err);
 };
-export const useGetCustomStories = (url: string, queryName: any) => {
+export const useGetCustomStories = (
+  url: string,
+  queryName: string | QueryKey
+) => {
   let customStoriesResponse: any[] = [];
   const getCustomStories = async (step: number) => {
     const storiesresponse = await api.get(`${url}.json?print=pretty`);
